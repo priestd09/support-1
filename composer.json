@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Talv\\Support\\": ""
+      "Talv\\Support\\": "src"
     }
   },
   "minimum-stability": "dev"
