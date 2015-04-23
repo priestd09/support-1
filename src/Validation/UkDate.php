@@ -6,10 +6,6 @@
  * Time: 10:24
  */
 
-
-
-use Carbon\Carbon;
-
 /**
  * Class UkDate
  * @package Talv\Support\Validation
@@ -25,7 +21,7 @@ class UkDate implements ValidatorInterface{
 	public function validate( $value ) {
 
 		try {
-			$date = Carbon::createFromFormat( 'd/m/Y', $value );
+			$date = \DateTime::createFromFormat( 'd/m/Y', $value );
 
 			return ( $date && ( $date->format( 'd/m/Y' ) == $value ) );
 		}catch ( \Exception $e )

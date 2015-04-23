@@ -1,7 +1,7 @@
 {
   "name": "talv/support",
   "description": "Support classes to add to any php project",
-  "license": "GNU",
+  "license": "GPL-2.0",
   "authors": [
     {
       "name": "Talv Bansal",
@@ -10,7 +10,6 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "nesbot/carbon": "dev-master"
   },
   "require-dev" :{
     "phpunit/phpunit": "~4.8@dev"
