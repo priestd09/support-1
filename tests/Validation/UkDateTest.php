@@ -15,7 +15,7 @@ class UkDateTest extends PHPUnit_Framework_TestCase{
 
 	public function setUp()
 	{
-		$this->validator = new \Talv\Support\Validation\UkDate();
+		$this->validator = new \Talv\Support\Validation\UkDateValidator;
 	}
 
 	public function testValidDate()

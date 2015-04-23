@@ -15,7 +15,7 @@ class UkPhoneTest extends PHPUnit_Framework_TestCase{
 
 	public function setUp()
 	{
-		$this->validator = new \Talv\Support\Validation\UkPhoneNumber();
+		$this->validator = new \Talv\Support\Validation\UkPhoneNumberValidator;
 	}
 
 	private function generatePhoneNumberTail( $length = 8)

@@ -15,7 +15,7 @@ class TimeTest extends PHPUnit_Framework_TestCase{
 
 	public function setUp()
 	{
-		$this->validator = new \Talv\Support\Validation\Time();
+		$this->validator = new \Talv\Support\Validation\TimeValidator;
 	}
 
 	public function testValidTime()

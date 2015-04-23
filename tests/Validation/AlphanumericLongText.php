@@ -9,13 +9,13 @@
 class AlphanumericTextBoxValidation extends PHPUnit_Framework_TestCase{
 
 	/**
-	 * @var \Talv\Support\Validation\AlphanumericTextBox
+	 * @var \Talv\Support\Validation\AlphanumericTextBoxValidator
 	 */
 	private $validator;
 
 	public function setUp()
 	{
-		$this->validator = new \Talv\Support\Validation\AlphanumericTextBox;
+		$this->validator = new \Talv\Support\Validation\AlphanumericTextBoxValidator;
 	}
 
 	public function testValid()

@@ -15,7 +15,7 @@ class UkPostCodeTest  extends PHPUnit_Framework_TestCase{
 
 	public function setUp()
 	{
-		$this->validator = new \Talv\Support\Validation\UkPostCode();
+		$this->validator = new \Talv\Support\Validation\UkPostCodeValidator;
 	}
 
 	public function testSpaces()
@@ -30,10 +30,10 @@ class UkPostCodeTest  extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( $response );
 	}
 
-	public function testNorthenIreland()
+	public function testAllowNorthenIreland()
 	{
 		$response = $this->validator->validate('BT276BY');
-		$this->assertFalse( $response );
+		$this->assertTrue( $response );
 	}
 
 }
