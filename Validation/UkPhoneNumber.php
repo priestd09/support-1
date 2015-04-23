@@ -1,4 +1,4 @@
-<?php
+<?php namespace Talv\Support\Validation;
 /**
  * Created by PhpStorm.
  * User: talv
@@ -6,7 +6,7 @@
  * Time: 10:32
  */
 
-namespace Talv\Support\Validation;
+
 
 /**
  * Class UkPhoneNumber
@@ -20,8 +20,7 @@ class UkPhoneNumber implements ValidatorInterface{
 	 * @return bool
 	 */
 	public function validate( $value ) {
-		$value = str_replace( " ", '', $value );
-		$pattern = '/^(([0]{1})|([\+][4]{2}))[0-9_.\-: ]{1,256}$/D';
+		$pattern = '/^((\+44\s?\d{4}|\(?\d{5}\)?)\s?\d{6})|((\+44\s?|0)7\d{3}\s?\d{6})$/D';
 		if (!preg_match( $pattern, $value )) {
 			return false;
 		}

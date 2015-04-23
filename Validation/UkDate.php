@@ -1,4 +1,4 @@
-<?php
+<?php namespace Talv\Support\Validation;
 /**
  * Created by PhpStorm.
  * User: talv
@@ -6,7 +6,6 @@
  * Time: 10:24
  */
 
-namespace Talv\Support\Validation;
 
 
 use Carbon\Carbon;
@@ -24,7 +23,14 @@ class UkDate implements ValidatorInterface{
 	 * @return bool
 	 */
 	public function validate( $value ) {
-		$date = Carbon::createFromFormat('d/m/Y', $value );
-		return ( $date && ($date->format('d/m/Y') == $value ) );
+
+		try {
+			$date = Carbon::createFromFormat( 'd/m/Y', $value );
+
+			return ( $date && ( $date->format( 'd/m/Y' ) == $value ) );
+		}catch ( \Exception $e )
+		{
+			return false;
+		}
 	}
 }

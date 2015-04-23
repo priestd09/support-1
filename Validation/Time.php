@@ -1,4 +1,4 @@
-<?php
+<?php namespace Talv\Support\Validation;
 /**
  * Created by PhpStorm.
  * User: talv
@@ -6,7 +6,7 @@
  * Time: 10:43
  */
 
-namespace Talv\Support\Validation;
+
 
 /**
  * Class Time
@@ -20,11 +20,13 @@ class Time implements ValidatorInterface{
 	 * @return bool
 	 */
 	public function validate( $value ) {
-		list($hour, $minute) = explode( ":", $value );
-		if ($hour > -1 && $hour < 24 && $minute > -1 && $minute < 60) {
-			return true;
+
+		$pattern = '/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/';
+		if (!preg_match( $pattern, $value )) {
+			return false;
 		}
 
-		return false;
+		return true;
+
 	}
 }

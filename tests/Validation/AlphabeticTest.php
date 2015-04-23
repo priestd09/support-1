@@ -18,8 +18,6 @@ class AlphabeticValidation extends PHPUnit_Framework_TestCase{
 		$this->validator = new \Talv\Support\Validation\Alphabetic;
 	}
 
-	//_.-\/-#:,\(\) 
-
 	public function testValid()
 	{
 		$response = $this->validator->validate( 'Abc.ed/_,:z' );

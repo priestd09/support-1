@@ -1,4 +1,4 @@
-<?php
+<?php namespace Talv\Support\Validation;
 /**
  * Created by PhpStorm.
  * User: talv
@@ -6,7 +6,7 @@
  * Time: 10:22
  */
 
-namespace Talv\Support\Validation;
+
 
 /**
  * Class AlphanumericTextBox
