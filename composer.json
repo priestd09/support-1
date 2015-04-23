@@ -1,0 +1,23 @@
+{
+  "name": "talv/support",
+  "description": "Support classes to add to any php project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Talv Bansal",
+      "email": "talvbansal@hotmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "nesbot/carbon": "dev-master",
+    "illuminate/support": "~5.1@dev",
+    "phpunit/phpunit": "~4.8@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Talv\\Support\\": ""
+    }
+  },
+  "minimum-stability": "dev"
+}
