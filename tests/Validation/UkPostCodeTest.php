@@ -30,10 +30,16 @@ class UkPostCodeTest  extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( $response );
 	}
 
-	public function testAllowNorthenIreland()
+	public function testAllowNorthernIreland()
 	{
 		$response = $this->validator->validate('BT276BY');
 		$this->assertTrue( $response );
+	}
+
+	public function testInvalidPostCode()
+	{
+		$response = $this->validator->validate('111111');
+		$this->assertFalse( $response );
 	}
 
 }
