@@ -17,7 +17,10 @@
   "autoload": {
     "psr-4": {
       "Talv\\Support\\": "src"
-    }
+    },
+    "files": [
+        "src/functions.php"
+    ]
   },
   "minimum-stability": "dev"
 }
