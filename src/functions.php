@@ -16,17 +16,17 @@ if( ! function_exists('debug') )
 
 }
 
-if( ! function_exists('dateToUkFormat') )
+if( ! function_exists('date_to_uk_format') )
 {
-	function dateToUkFormat( $date )
+	function date_to_uk_format( $date )
 	{
 		return (new \Talv\Support\Util\DateUtility())->toUk( $date );
 	}
 }
 
-if( ! function_exists('dateToMySqlFormat') )
+if( ! function_exists('date_to_mysql_format') )
 {
-	function dateToMySqlFormat( $date )
+	function date_to_mysql_format( $date )
 	{
 		return (new \Talv\Support\Util\DateUtility())->toMySql( $date );
 	}
