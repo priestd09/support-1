@@ -137,7 +137,9 @@ class DvlaUtility implements DvlaUtilityInterface {
 	 */
 	private function getSurnamePart( $surname ) {
 
-		$surname = str_replace( ' ', '', $surname ); //some surnames have spaces in apparently? eg: Fehmi "ben abida"
+		//$surname = str_replace( ' ', '', $surname ); //some surnames have spaces in apparently? eg: Fehmi "ben abida"
+		//remove all non-alphabetic characters from the surname in case they have spaces or hyphens in them
+		$surname = preg_replace("/[^A-Za-z]/", '', $surname);
 		$length  = strlen( $surname );
 
 		if ( $length >= 5 ) {
