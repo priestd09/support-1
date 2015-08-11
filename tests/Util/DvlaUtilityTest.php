@@ -145,5 +145,17 @@ class DvlaUtilityTest extends PHPUnit_Framework_TestCase {
 		$this->assertFalse( $response );
 	}
 
+	public function testDvlaNumberWhereNameHasHypens()
+	{
+		$title   = 'Mr';
+		$first   = 'Alexis';
+		$initial = '';
+		$surname = 'Reid-Hamilton';
+		$dob     = '22/05/1954';
+
+		$response = $this->dvlaUtility->isDvlaNumberValid( $title, $first, $initial, $surname, $dob, 'REIDH505224A99AA');
+		$this->assertTrue( $response );
+	}
+
 
 }

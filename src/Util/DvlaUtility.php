@@ -58,10 +58,10 @@ class DvlaUtility implements DvlaUtilityInterface {
 	 * @return string
 	 */
 	public function generateDvlaNumber( $title, $firstName, $initial, $surName, $dob ) {
-		$title     = trim( strtoupper( $title ) );
-		$firstName = trim( strtoupper( $firstName ) );
-		$initial   = trim( strtoupper( $initial ) );
-		$surName   = trim( strtoupper( $surName ) );
+		$title     = $this->sanitiseDvlaComponentString( $title );
+		$firstName = $this->sanitiseDvlaComponentString( $firstName );
+		$initial   = $this->sanitiseDvlaComponentString( $initial );
+		$surName   = $this->sanitiseDvlaComponentString( $surName );
 		$dob       = $this->dateUtility->toUk( $dob );
 		$dobArr    = explode( '/', $dob );
 
@@ -90,6 +90,15 @@ class DvlaUtility implements DvlaUtilityInterface {
 		return $validDvlaNumbers;
 
 	}
+
+    /**
+     * clean a string off all extra characters like hyphens and blank spaces
+     * @return string
+     */
+    private function sanitiseDvlaComponentString( $str )
+    {
+        return strtoupper( preg_replace("/[^a-zA-Z]/", "", $str) );
+    }
 
 	/**
 	 * check if the first 13 chars of a dvla number supplied match the one generated
@@ -160,7 +169,7 @@ class DvlaUtility implements DvlaUtilityInterface {
 	 */
 	private function getDobString( array $dobArr, $isFemale = false ) {
 		/**
-		 * get third letter of year
+		 * get third number of year
 		 */
 
 		$thirdCharInDOBYear = $dobArr[2][2];
@@ -171,7 +180,7 @@ class DvlaUtility implements DvlaUtilityInterface {
 		$dobDay = $dobArr[0];
 
 		/**
-		 * get third letter of year
+		 * get last number of year
 		 */
 		$lastCharInDOBYear = $dobArr[2][3];
 
