@@ -31,3 +31,11 @@ if( ! function_exists('date_to_mysql_format') )
 		return (new \Talv\Support\Util\DateUtility())->toMySql( $date );
 	}
 }
+
+if( ! function_exists('format_dvla_number') )
+{
+    function format_dvla_number( $dvla )
+    {
+        return (new \Talv\Support\Util\DvlaUtility( new \Talv\Support\Util\DateUtility() ) )->formatDvlaNumber( $dvla );
+    }
+}
