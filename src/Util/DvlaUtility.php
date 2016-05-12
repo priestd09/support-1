@@ -149,7 +149,14 @@ class DvlaUtility implements DvlaUtilityInterface {
 		//$surname = str_replace( ' ', '', $surname ); //some surnames have spaces in apparently? eg: Fehmi "ben abida"
 		//remove all non-alphabetic characters from the surname in case they have spaces or hyphens in them
 		$surname = preg_replace("/[^A-Za-z]/", '', $surname);
-		$length  = strlen( $surname );
+
+        //if surname start with mac for some reason the DVLA removes the "a"
+        if( substr( $surname, 0, 3 ) == 'MAC' )
+        {
+            $surname = substr_replace( $surname, 'MC', 0, 3);
+		}
+
+        $length  = strlen( $surname );
 
 		if ( $length >= 5 ) {
 			return substr( $surname, 0, 5 );
